@@ -28,8 +28,17 @@ dependencies {
     compile('com.github.samtools:htsjdk:3.0.5') {
         transitive = false
     }
+    // from invitae/VarDictJava fork - explicit versions of these dependencies
+    // for vulnerability resolution
+    compile 'org.apache.commons:commons-compress:1.26.1'
+    compile 'org.xerial.snappy:snappy-java:1.1.10.7'
+
     testCompile 'org.mockito:mockito-core:2.23.0'
     testCompile 'org.testng:testng:6.9.13.6'
+
+    // from invitae/VarDictJava fork - explicit ant dependency added to force
+    // upgrade to safe version for this testing dependency.
+    testCompile 'org.apache.ant:ant:1.10.15'
 }
 
 mainClassName = "com.astrazeneca.vardict.Main"
